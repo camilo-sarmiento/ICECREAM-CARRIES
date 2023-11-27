@@ -1,0 +1,62 @@
+.checkout {
+  position: absolute;
+  bottom: -30px;
+  width: 20%;
+  height: 60px;
+  background-color: var(--color-gold);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+
+  & > .label {
+    position: absolute;
+    width: 75%;
+    height: 30px;
+    top: -30px;
+    border-radius: 10px 10px 0 0;
+    background-color: var(--color-black);
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-variation-settings: 'wght' 800;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 30px;
+  }
+  & > .data {
+    width: 95%;
+    height: 75%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    text-align: center;
+    & > div {
+      font-variation-settings: 'wght' 500;
+      width: 50%;
+    }
+    & span {
+      color: var(--color-morado);
+      font-variation-settings: 'wght' 800;
+      text-transform: uppercase;
+    }
+    & > .bar {
+      position: absolute;
+      z-index: -1;
+      height: 5px;
+      background-color: var(--color-gold);
+    }
+  }
+
+  & .line {
+    width: 2px;
+    height: 90%;
+    background-color: var(--color-morado);
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "menta": {
+    "info": {
+      "name": "Placer de Menta Fresca",
+      "description": "Experimenta la frescura de la menta con nuestra deliciosa combinación.",
+      "rate": 4,
+      "IMG": 0,
+      "color": "#48CBDF"
+    },
+    "list": [
+      {
+        "name": "Rol de Menta en Éxtasis",
+        "type": "Rol de Helado",
+        "info": "Disfruta de un rollo de menta con ingredientes frescos y sabores irresistibles.",
+        "data": ["300 g", "0.83 cal/g", 1500]
+      },
+      {
+        "name": "Copa de Ensueño de Menta",
+        "type": "Copa",
+        "info": "Sumérgete en un sueño de menta con nuestra copa llena de indulgencia.",
+        "data": ["300 g", "0.83 cal/g", 2000]
+      },
+      {
+        "name": "Sándwich Fusión de Menta",
+        "type": "Sándwich de Helado",
+        "info": "Fusionamos la suavidad de la menta entre dos capas de galleta crujiente.",
+        "data": ["300 g", "0.83 cal/g", 2500]
+      },
+      {
+        "name": "Helado Supremo de Menta",
+        "type": "Helado en Vaso",
+        "info": "Experimenta la supremacía de la menta en un vaso lleno de placer helado.",
+        "data": ["300 g", "0.83 cal/g", 3000]
+      }
+    ]
+  },
+  "fresa": {
+    "info": {
+      "name": "Dulce Fragancia de Fresa",
+      "description": "El dulce y natural sabor de las fresas frescas en cada bocado.",
+      "rate": 6,
+      "IMG": 1,
+      "color": "#E05555"
+    },
+    "list": [
+      {
+        "name": "Rol de Sensación de Fresa",
+        "type": "Rol de Helado",
+        "info": "Siente la sensación de las fresas frescas en cada rollo de helado.",
+        "data": ["300 g", "0.73 cal/g", 1800]
+      },
+      {
+        "name": "Copa Delicia de Fresa",
+        "type": "Copa",
+        "info": "Deléitate con la delicia de las fresas en nuestra copa llena de placer.",
+        "data": ["300 g", "0.73 cal/g", 2200]
+      },
+      {
+        "name": "Sándwich Tentación de Fresa",
+        "type": "Sándwich de Helado",
+        "info": "Déjate tentar por la tentación de las fresas entre capas suaves de helado.",
+        "data": ["300 g", "0.73 cal/g", 2600]
+      },
+      {
+        "name": "Helado Fantasía de Fresa",
+        "type": "Helado en Vaso",
+        "info": "Sumérgete en una fantasía de fresa con nuestro helado en vaso.",
+        "data": ["300 g", "0.73 cal/g", 3000]
+      }
+    ]
+  },
+  "piña": {
+    "info": {
+      "name": "Explosión Tropical de Piña",
+      "description": "Una explosión tropical de sabor con auténtico toque de piña.",
+      "rate": 5,
+      "IMG": 2,
+      "color": "#FFBE1E"
+    },
+    "list": [
+      {
+        "name": "Rol de Piña Tropical",
+        "type": "Rol de Helado",
+        "info": "Disfruta de una explosión tropical con nuestro rollo de piña.",
+        "data": ["300 g", "0.67 cal/g", 1600]
+      },
+      {
+        "name": "Copa Paraíso de Piña",
+        "type": "Copa",
+        "info": "Sumérgete en el paraíso tropical con nuestra copa de piña refrescante.",
+        "data": ["300 g", "0.67 cal/g", 2000]
+      },
+      {
+        "name": "Sándwich Atardecer de Piña",
+        "type": "Sándwich de Helado",
+        "info": "Experimenta la serenidad del atardecer con nuestro sándwich de piña.",
+        "data": ["300 g", "0.67 cal/g", 2400]
+      },
+      {
+        "name": "Helado Erupción de Piña",
+        "type": "Helado en Vaso",
+        "info": "Vive una erupción de sabor con nuestro helado de piña en vaso.",
+        "data": ["300 g", "0.67 cal/g", 2800]
+      }
+    ]
+  }
+}

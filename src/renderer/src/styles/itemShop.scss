@@ -1,0 +1,205 @@
+#store .item {
+  width: 100%;
+  height: 80px;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+#store .item .name {
+  width: 45%;
+  height: 100%;
+  background-color: white;
+  color: var(--color-blue);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 8px 0 0 8px;
+  h3 {
+    font-size: 20px;
+    font-variation-settings: 'wght' 800;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 15px;
+    font-variation-settings: 'wght' 400;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+}
+#store .item > p {
+  width: auto;
+}
+#store .item .data {
+  width: 25%;
+}
+#store .item .check {
+  background-color: var(--color-morado-dark);
+  border-left: 3px solid white;
+  border-right: none;
+  border-radius: 10px;
+  width: 50px;
+  height: 100%;
+  transition: all 0.2s;
+}
+#store .item .icon {
+  display: none;
+  height: 60%;
+  animation: iconShop 0.3s cubic-bezier(0.18, 0.06, 0.35, 1.35);
+  pointer-events: none;
+}
+@keyframes iconShop {
+  0% {
+    transform: translateX(200px);
+  }
+  75% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+#store .item:hover:not(#checked) .check {
+  width: 100px;
+  background-color: var(--color-blue);
+}
+#store .item:hover .icon {
+  display: block;
+}
+#checked.item {
+  gap: 0px;
+}
+#checked.item > .check {
+  width: 100%;
+  justify-content: space-around;
+  position: relative;
+  background-color: var(--color-morado-dark);
+  border-radius: 0px 10px 10px 0;
+  border: none;
+  .icon {
+    animation: none;
+    display: block;
+  }
+  .P-slider {
+    width: 70%;
+    position: relative;
+    .C-cant {
+      position: inherit;
+      width: 100%;
+      -webkit-appearance: none;
+      height: 5px;
+      outline: none;
+      border: none;
+      border-radius: 50px;
+      margin-bottom: 10px;
+      z-index: 2;
+    }
+    .C-cant::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      cursor: pointer;
+      z-index: 3;
+      position: relative;
+      width: 30px;
+      height: 50px;
+    }
+  }
+  .E-value {
+    width: 70px;
+    text-align: center;
+    font-variation-settings: 'wght' 700;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    box-shadow:
+      2px 2px 0px rgba(0, 0, 0, 0.14),
+      -2px -2px 0px rgba(255, 255, 255, 0.14);
+  }
+  .E-value:hover {
+    box-shadow:
+      3px 3px 0px rgba(0, 0, 0, 0.24),
+      -3px -3px 0px rgba(255, 255, 255, 0.24);
+  }
+  .value {
+    position: absolute;
+    width: 20px;
+    height: auto;
+    top: 50%;
+    text-align: center;
+    line-height: 50px;
+    z-index: 1;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    pointer-events: none;
+    transform: translateY(-50%);
+
+    .aro {
+      position: relative;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: solid 2px white;
+      background-color: rgba(255, 255, 255, 0);
+      transition: all 0.1s ease-in-out;
+      .center {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: white;
+        transition: all 0.2s ease-in-out;
+      }
+      .around {
+        position: absolute;
+        width: 15px;
+        height: 50%;
+        top: 0;
+        transform-origin: bottom;
+        &::after {
+          content: '';
+          width: 0px;
+          height: 0px;
+          background: white;
+          position: absolute;
+          border-radius: 50%;
+          transform: translateX(-50%) translateY(-50%);
+        }
+      }
+    }
+    & .shadow {
+      box-shadow:
+        0 0 0 10px hsla(266, 69%, 51%, 0.4),
+        0 0 0 20px hsla(266, 69%, 51%, 0.4);
+      z-index: -1;
+      // width: 80px;
+      // height: 80px;
+    }
+    &.thumb .aro {
+      width: 80px;
+      height: 80px;
+    }
+    &.thumb .around::after {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+.obj1 {
+  top: -100px !important;
+  transform-origin: bottom;
+  pointer-events: none;
+}
+
+// input[type='range']::-webkit-slider-thumb {
+//   /*  ...  */
+//   /*  slider progress trick  */
+//   box-shadow: -407px 0 0 400px #f50;
+// }
