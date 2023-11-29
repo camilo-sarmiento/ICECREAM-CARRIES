@@ -29,10 +29,11 @@
   height: 15%;
 }
 .description > h1 {
-  font-size: 70px;
+  font-size: 50px;
   font-variation-settings: 'wght' 900;
   text-shadow: 5px 5px 0px var(--color-morado);
   -webkit-text-stroke: 2px var(--color-morado-dark); /* Para navegadores basados en WebKit (Safari, Chrome) */
+  text-transform: uppercase;
 }
 .description > p {
   text-align: justify;

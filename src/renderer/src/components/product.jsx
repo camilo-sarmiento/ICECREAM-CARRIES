@@ -9,11 +9,11 @@ import '../styles/product.scss'
 
 export default function product({ data }) {
   const img = [producto_menta, producto_fresa, producto_pina]
-  const { name, description, rate } = data
+  const { name, nickname, description, rate } = data
   const { total } = useContext(Context)
   const [stars, setstars] = useState([])
-
-  const claves = Object.keys(total).filter((key) => key.startsWith(name))
+  let claves
+  claves = Object.keys(total).filter((key) => key.startsWith(name))
   let value = 0
   let cant = 0
   claves.forEach((key) => {
@@ -25,7 +25,6 @@ export default function product({ data }) {
     style: 'currency',
     currency: 'COP'
   })
-  console.log(total)
   useEffect(() => {
     const newValue = []
     for (let i = 0; i < 6; i++) {
@@ -48,9 +47,9 @@ export default function product({ data }) {
             <p>{cant}</p>
           </div>
         </div>
-        <div className="info">
+        <div className="info" style={{ height: '45%' }}>
           <div className="stars flex-c">{stars}</div>
-          <h2 className="name">{name} </h2>
+          <h2 className="name">{nickname} </h2>
           <p>{description} </p>
           <div className="price_P">$ {formatValue}</div>
         </div>

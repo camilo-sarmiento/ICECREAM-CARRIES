@@ -34,7 +34,7 @@
 #store .background .img img {
   position: absolute;
   width: 125%;
-  transform: translateX(-50%);
+  transform: translateX(-75%) translateY(-10%) scale(1.1);
   left: 50%;
   top: -15%;
   height: auto;

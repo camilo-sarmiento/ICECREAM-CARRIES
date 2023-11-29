@@ -1,9 +1,10 @@
-import { useContext, useState, useRef, useEffect } from 'react'
+/* eslint-disable react/prop-types */
+import { useContext, useRef, useEffect } from 'react'
 import Context from '../context/StaticContext'
 import '../styles/checkout.scss'
 
-export default function Checkout() {
-  const { total, setTotal, setCantidad } = useContext(Context)
+export default function Checkout({ envoice, setEnvoice }) {
+  const { total } = useContext(Context)
   const bar = useRef(null)
 
   const keys = Object.keys(total).filter((key) => key !== 'all')
@@ -23,7 +24,12 @@ export default function Checkout() {
     currency: 'COP'
   })
   return (
-    <div className="checkout">
+    <div
+      className="checkout"
+      onClick={() => {
+        setEnvoice(!envoice)
+      }}
+    >
       <div className="label">Comprar</div>
       <div className="data">
         <div className="cantidad">

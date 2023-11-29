@@ -10,6 +10,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 15px;
+  z-index: 3;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
 
   & > .label {
     position: absolute;
@@ -51,6 +55,7 @@
       z-index: -1;
       height: 5px;
       background-color: var(--color-gold);
+      transition: all 0.2s ease-in-out;
     }
   }
 
@@ -58,5 +63,12 @@
     width: 2px;
     height: 90%;
     background-color: var(--color-morado);
+  }
+  &:hover {
+    width: 22%;
+    background-color: var(--color-morado-dark);
+    & .bar {
+      background-color: var(--color-morado-dark);
+    }
   }
 }

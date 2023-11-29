@@ -1,7 +1,8 @@
 {
   "menta": {
     "info": {
-      "name": "Placer de Menta Fresca",
+      "name": "menta",
+      "nickname": "Placer de Menta Fresca",
       "description": "Experimenta la frescura de la menta con nuestra deliciosa combinación.",
       "rate": 4,
       "IMG": 0,
@@ -36,7 +37,8 @@
   },
   "fresa": {
     "info": {
-      "name": "Dulce Fragancia de Fresa",
+      "name": "fresa",
+      "nickname": "Dulce Fragancia de Fresa",
       "description": "El dulce y natural sabor de las fresas frescas en cada bocado.",
       "rate": 6,
       "IMG": 1,
@@ -71,7 +73,8 @@
   },
   "piña": {
     "info": {
-      "name": "Explosión Tropical de Piña",
+      "name": "piña",
+      "nickname": "Explosión Tropical de Piña",
       "description": "Una explosión tropical de sabor con auténtico toque de piña.",
       "rate": 5,
       "IMG": 2,

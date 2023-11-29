@@ -11,6 +11,7 @@ export default function ItemShop({ props, index, control, color }) {
   const inputValue = useRef(null)
   const { name, type, info, data } = props
   const [value, setValue] = useState(0)
+  const [isEdit, setIsEdit] = useState(false)
 
   let menu
   let cant
@@ -21,29 +22,10 @@ export default function ItemShop({ props, index, control, color }) {
     thumb.current.style.transform = `translateX(-${100 * (pos / 100)}%)translateY(-50%)`
     second.current.style.transform = `rotate(${360 * (pos / 100)}deg)`
   }
-  const handleChangeValue = (e) => {
-    const rawValue = e.target.textContent
-    const newValue = parseInt(rawValue.replace(/\D/g, ''))
-    if (newValue >= 100) return
-
-    input.current.value = newValue
-    const oldValue = parseInt(value)
-
-    if (!isNaN(newValue) && newValue >= 0 && newValue <= 100) {
-      setValue(newValue)
-      controlThumb()
-    }
-
-    if (newValue < oldValue) {
-      setCantidad(cantidad - (oldValue - newValue))
-    } else {
-      setCantidad(cantidad + (newValue - oldValue))
-    }
-  }
 
   const handleChange = (e) => {
     const oldValue = parseInt(value)
-    const newValue = parseInt(e.target.value)
+    const newValue = isNaN(e.target.value) ? 0 : parseInt(e.target.value)
 
     if (thumb.current.className == 'value') {
       thumb.current.className += ' thumb'
@@ -51,19 +33,11 @@ export default function ItemShop({ props, index, control, color }) {
     controlThumb()
 
     setValue(newValue)
-    inputValue.current.innerText = newValue
+
     const isAdd = newValue > oldValue
     const newCant = !isAdd ? cantidad - (oldValue - newValue) : cantidad + (newValue - oldValue)
-
     setTotal((prevTotal) => {
       const newTotal = { ...prevTotal }
-      console.log({
-        isAdd,
-        newValue,
-        data: data[2],
-        prevTotal: prevTotal[index],
-        oldValue
-      })
 
       if (isAdd || !prevTotal[index]) {
         // Si es una adición o prevTotal[index] no está definido
@@ -90,6 +64,7 @@ export default function ItemShop({ props, index, control, color }) {
       return newTotal
     })
     setCantidad(newCant)
+    // inputValue.current.innerText = newValue
   }
 
   useEffect(() => {
@@ -101,7 +76,7 @@ export default function ItemShop({ props, index, control, color }) {
     thumb.current.style.left = cantidad_log + '%'
     thumb.current.style.transform = `translateX(-${100 * (cantidad_log / 100)}%)translateY(-50%)`
     second.current.style.transform = `rotate(${360 * (cantidad_log / 100)}deg)`
-  }, [control])
+  }, [control, total, isEdit])
 
   if (!control) {
     const formatValue = data[2].toLocaleString('es-ES', {
@@ -131,19 +106,12 @@ export default function ItemShop({ props, index, control, color }) {
             min={0}
             max={100}
             onInput={handleChange}
-            onBlur={() => {
-              console.log('first')
-            }}
             id={index}
             onMouseLeave={() => {
               thumb.current.children[0].children[0].className = 'center'
               thumb.current.className = 'value'
-              setTimeout(() => {
-                console.log('clear')
-              }, 500)
             }}
             onMouseEnter={() => {
-              console.log(thumb.current.children[0].children[0])
               thumb.current.children[0].children[0].className += ' shadow'
             }}
             defaultValue={total[index] ? total[index] : 0}
@@ -158,11 +126,12 @@ export default function ItemShop({ props, index, control, color }) {
         <div
           ref={inputValue}
           className="E-value"
-          contentEditable="true"
-          onInput={handleChangeValue}
+          // contentEditable="true"
+          // onInput={handleChangeValue}
           onClick={(e) => {
             e.preventDefault()
             e.target.focus()
+            setIsEdit(true)
           }}
         ></div>
       </>

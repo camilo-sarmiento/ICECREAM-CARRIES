@@ -1,8 +1,8 @@
 import video from '../assets/VIDEO/ANIMATION DESING_001.mp4'
 import POSTER_DESING from '../assets/IMG/POSTER_DESING.jpg'
-import poster_01 from '../assets/IMG/POST_01.JPG'
-import poster_02 from '../assets/IMG/poster_03.png'
-import poster_03 from '../assets/IMG/poster_04.png'
+import poster_01 from '../assets/IMG/POSTER_MENTA.png'
+import poster_02 from '../assets/IMG/POSTER_FRESA.png'
+import poster_03 from '../assets/IMG/POSTER_PINA.png'
 
 import '../styles/SocialMedia.scss'
 
@@ -31,11 +31,12 @@ export default function SocialMedia() {
     <>
       <div className="section">
         <div className="description">
-          <h1>POST</h1>
+          <h1>Descubre el placer</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta suscipit modi et
-            accusamus eum delectus libero maiores. Excepturi, quam nostrum. Harum reprehenderit
-            voluptate dolorem sed consequatur veniam eaque expedita dignissimos.
+            Disfruta de este delicioso postre después de cada comida sin preocuparte por el mal
+            aliento o la acumulación de bacterias en la boca. Hemos creado una experiencia única que
+            no solo satisface tu gusto por los helados, sino que también promueve la higiene bucal,
+            permitiéndote disfrutar de un placer dulce mientras cuidas de tu sonrisa.
           </p>
         </div>
         <div className="post-layout">
@@ -43,12 +44,12 @@ export default function SocialMedia() {
           <div className="list">
             <div style={{ background: `url(${POSTER_DESING})` }}></div>
             <div style={{ background: `url(${poster_01})` }}></div>
-            <div></div>
-            <div></div>
+            <div style={{ background: `url(${poster_02})` }}></div>
+            <div style={{ background: `url(${poster_03})` }}></div>
             <div style={{ background: `url(${POSTER_DESING})` }}></div>
             <div style={{ background: `url(${poster_01})` }}></div>
-            <div></div>
-            <div></div>
+            <div style={{ background: `url(${poster_02})` }}></div>
+            <div style={{ background: `url(${poster_03})` }}></div>
           </div>
         </div>
       </div>
